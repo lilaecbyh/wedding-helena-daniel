@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Helena & Daniel Wedding</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Georgia', serif;
+    background: linear-gradient(to bottom, #dfefff, #f7fbff);
+    color: #2c3e50;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+.section {
+    padding: 70px 20px;
+}
+
+h1 {
+    font-size: 55px;
+    color: #c6a75e;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+
+.gold {
+    color: #c6a75e;
+}
+
+button {
+    padding: 12px 30px;
+    background: #c6a75e;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+input, textarea {
+    padding: 10px;
+    width: 250px;
+    margin: 5px;
+}
+
+iframe {
+    width: 90%;
+    height: 300px;
+    border: 0;
+}
+
+footer {
+    background: #f1f7ff;
+    padding: 20px;
+    font-size: 14px;
+}
+
+/* Sakura falling */
+.sakura {
+    position: fixed;
+    top: -10px;
+    width: 20px;
+    height: 20px;
+    background: pink;
+    border-radius: 50%;
+    opacity: 0.7;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh);
+    }
+}
+
+/* Butterfly */
+.butterfly {
+    position: fixed;
+    width: 25px;
+    animation: fly 10s linear infinite;
+}
+
+@keyframes fly {
+    0% { transform: translateX(-10vw) translateY(50vh); }
+    100% { transform: translateX(110vw) translateY(20vh); }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Music -->
+<audio autoplay loop>
+  <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mp3">
+</audio>
+
+<div class="section">
+<h1>Helena Sofea <br> & <br> Daniel Muaz</h1>
+<h2>Are Getting Married</h2>
+
+<p>
+Puteri kepada Encik Ramdan & Puan Salmah<br>
+dan<br>
+Putera kepada Encik Sufian & Puan Norliza
+</p>
+
+<p class="gold">12 December 2026 | Penang, Malaysia</p>
+
+<h3 id="countdown"></h3>
+</div>
+
+<div class="section">
+<h2>Aturcara Majlis</h2>
+<p>11:00 AM – Ketibaan Tetamu</p>
+<p>12:30 PM – Ketibaan Pengantin</p>
+<p>1:00 PM – Jamuan Makan</p>
+<p>3:30 PM – Bersurai</p>
+</div>
+
+<div class="section">
+<h2>Menu</h2>
+<p>Nasi Minyak</p>
+<p>Ayam Masak Merah</p>
+<p>Daging Kurma</p>
+<p>Acar Jelatah</p>
+
+<h3>Side Dish</h3>
+<p>Puding</p>
+<p>Buah-buahan</p>
+<p>Air Sirap</p>
+</div>
+
+<div class="section">
+<h2>Lokasi</h2>
+<iframe 
+src="https://maps.google.com/maps?q=penang&t=&z=13&ie=UTF8&iwloc=&output=embed">
+</iframe>
+</div>
+
+<div class="section">
+<h2>RSVP</h2>
+<input type="text" placeholder="Nama"><br>
+<input type="number" placeholder="Bilangan Hadir"><br>
+<button>Hantar RSVP</button>
+</div>
+
+<div class="section">
+<h2>Leave Your Wish</h2>
+<textarea placeholder="Tulis ucapan anda..."></textarea><br>
+<button>Kirim Ucapan</button>
+</div>
+
+<div class="section">
+<h2>Contact</h2>
+<p>Helena: 012-3456789</p>
+<p>Daniel: 019-9876543</p>
+</div>
+
+<footer>
+With Love, Helena & Daniel
+</footer>
+
+<!-- Countdown Script -->
+<script>
+var weddingDate = new Date("Dec 12, 2026 10:00:00").getTime();
+setInterval(function() {
+    var now = new Date().getTime();
+    var distance = weddingDate - now;
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    document.getElementById("countdown").innerHTML =
+    days + " Days to Go";
+}, 1000);
+
+/* Sakura generator */
+for (let i = 0; i < 15; i++) {
+    let sakura = document.createElement("div");
+    sakura.className = "sakura";
+    sakura.style.left = Math.random() * 100 + "vw";
+    sakura.style.animationDuration = (5 + Math.random() * 5) + "s";
+    document.body.appendChild(sakura);
+}
+
+/* Butterfly */
+let butterfly = document.createElement("img");
+butterfly.src = "https://upload.wikimedia.org/wikipedia/commons/3/3a/White_butterfly.png";
+butterfly.className = "butterfly";
+document.body.appendChild(butterfly);
+</script>
+
+</body>
+</html>

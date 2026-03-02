@@ -1,0 +1,6 @@
+<h2>Share Your Moments</h2>
+<p>Scan QR code at the venue or click below to upload your photos & videos.</p>
+
+<a href="https://docs.google.com/forms/d/e/1FAIpQLSd-aiRxaVUK3m5zaS3wFbNYNcto28lsVn9o8C_xkhMizso4Gw/viewform?usp=publish-editor" target="_blank">
+<button>Upload Your Memory</button>
+</a>
